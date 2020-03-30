@@ -1,0 +1,104 @@
+ [
+   {
+    "pageName": "TrackPage",
+    "name": "title",
+    "locateUsing": "xpath",
+    "locator": "//span[text()='Dance Monkey']"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "global_value",
+    "locateUsing": "xpath",
+    "locator": "(//span[contains (@class, \"icon-info\")]/..)[2]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "market_value",
+    "locateUsing": "xpath",
+    "locator": "(//span[contains (@class, \"icon-info\")]/..)[1]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "market_picker",
+    "locateUsing": "xpath",
+    "locator": "(//header/div/div/div)[3]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "market_input",
+    "locateUsing": "xpath",
+    "locator": "//input[@placeholder=\"Filter markets\"]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "dsp_picker",
+    "locateUsing": "xpath",
+    "locator": "(//button//span[contains (@class, \"icon--small icon-down\")])[1]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "calendar_icon",
+    "locateUsing": "css",
+    "locator": ".icon-calendar"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "calendar_window",
+    "locateUsing": "css",
+    "locator": ".DayPicker"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "firstDayOfPreviousMonth",
+    "locateUsing": "xpath",
+    "locator": "(//div[@class='DayPicker-Week']/div[text()='1'])[1]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "lastDayOfPreviousMonth",
+    "locateUsing": "xpath",
+    "locator": "(//div[@class='DayPicker-Week']/div[text()='28'])[1]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "date_field_from",
+    "locateUsing": "xpath",
+    "locator": "//div[@class='DayPicker']/..//input[1]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "date_field_to",
+    "locateUsing": "xpath",
+    "locator": "//div[@class='DayPicker']/..//input[2]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "one_year_filter",
+    "locateUsing": "xpath",
+    "locator": "//b[text()='1 Year']"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "two_weeks_filter",
+    "locateUsing": "xpath",
+    "locator": "//b[text()='2 Weeks']"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "graph_period_string",
+    "locateUsing": "xpath",
+    "locator": "//span[contains(text(), 'Showing ')]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "graph",
+    "locateUsing": "xpath",
+    "locator": "//div[contains(@id, 'highcharts')]"
+  },
+    {
+    "pageName": "TrackPage",
+    "name": "tooltip_total",
+    "locateUsing": "xpath",
+    "locator": "//div[contains(@class, 'highcharts-tooltip')]//div/div[2]/span[2]/b"
+  }
+ ]

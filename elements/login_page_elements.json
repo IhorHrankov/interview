@@ -1,0 +1,26 @@
+[
+  {
+    "pageName": "LoginPage",
+    "name": "email_field",
+    "locateUsing": "name",
+    "locator": "email"
+  },
+  {
+    "pageName": "LoginPage",
+    "name": "password_field",
+    "locateUsing": "name",
+    "locator": "password"
+  },
+  {
+    "pageName": "LoginPage",
+    "name": "login_btn",
+    "locateUsing": "name",
+    "locator": "submit"
+  },
+    {
+    "pageName": "LoginPage",
+    "name": "menu_icon",
+    "locateUsing": "css",
+    "locator": ".icon-menu"
+  }
+]
