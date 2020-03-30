@@ -86,5 +86,45 @@ class TrackPageTest(unittest.TestCase):
 
         self.ts.markFinal(self.trackPage.are_lean_froward_and_back_100(lean_back, lean_forward), "Values sum is 100%")
 
+    @allure.story("POC scope")
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.title("Demographics endpoint for 1Y period")
+    @allure.description("Demographics endpoint for 1Y period (negative case – endpoint could fail with time out)")
+    def test_demographics_data_endpoint_for_1_year_period(self):
+        response = self.trackPage.get_api_demographics('2019-02-25', '2020-02-25')
+        assert response['status_code'] == 200
 
+    @allure.story("POC scope")
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.title("'Add date' of track added to playlist directly in Spotify")
+    @allure.description("Verification of streams count and days in playlist for 1 playlist in Track Details section")
+    def test_current_playlists_streams_and_days(self):
+        self.loginPage.login(rd.get_config('user_email'), rd.get_config('user_password'))
+        self.loginPage.is_logged_in()
+
+        self.driver.get(rd.get_config('base_url') + "/spotify/track/" + track_id)
+        self.page_has_loaded()
+
+        self.wait_for_element_visible(*self.locator(self.track_locators, 'market_picker'))
+        self.click_element(*self.locator(self.track_locators, 'market_picker'))
+        self.wait_for_element_visible(*self.locator(self.track_locators, 'market_input'))
+        self.send_text(market, *self.locator(self.track_locators, 'market_input'))
+        market_item = "//div[text()='" + market + "']/..//img"
+        self.wait_for_element_visible(market_item, "xpath")
+        self.click_element(market_item, "xpath")
+
+    @allure.story("POC scope")
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.title("'Add date' of track added to playlist directly in Spotify")
+    @allure.description("Verification of streams count and days in playlist for 1 playlist in Track Details section")
+    def test_current_playlists_streams_and_days(self):
+        self.loginPage.login(rd.get_config('user_email'), rd.get_config('user_password'))
+        self.loginPage.is_logged_in()
+
+        self.trackPage.open_spotify_track_page(rd.get_config('spotify_trackId'))
+        self.trackPage.select_market("Australia")
+
+        playlists = self.trackPage.get_playlists_ids_days(15)
+        days_in_playlists_db = self.trackPage.get_days_in_playslists_db(playlists[0], rd.get_config("spotify_track_isrc"))
+        days_in_playlists_ui = playlists[1]
 
